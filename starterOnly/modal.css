@@ -232,12 +232,46 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
+/* style message d'erreur*/
+.erreur{
+    font-size: 0.5em;
     color: red;
-} */
+} 
+
+[id^="erreur-"]{
+  display: none;
+}
+/*style message Validation*/
+.bground-message {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background: #232323;
+  border-radius: 10px;
+  color: #fff;
+  padding-top: 10px;
+  padding: 15px 8%;
+  margin: 15px auto;
+}
+
+.bground-message > p {
+text-align: center;
+font-size: 1vw;
+}
+
+.bground-message > h2 {
+margin-top: 25%;
+margin-bottom: 1em ;
+text-align: center;
+font-size: 1vw;
+}
+
+
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
