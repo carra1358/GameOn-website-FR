@@ -42,6 +42,7 @@ const birthDate = document.getElementById("birthdate");
 const quantity = document.getElementById("quantity");
 let  locations = document.getElementsByName("location");
 const checkbox1 = document.getElementById("checkbox1");
+const checkbox2 = document.getElementById("checkbox2");
 let locationChecked = 0;
 const emailRegx = new RegExp ("[a-zA-Z0-9.-]+@[a-zA-Z0-9-]+.[a-z]+");
 const birthRegx = new RegExp ("[0-9-]{5}[0-9-]{3}[0-9-]{2}");
@@ -57,13 +58,17 @@ const erreurQuantity = document.getElementById("erreur-quantity");
 const erreurLocation = document.getElementById("erreur-location");
 const erreurCheckbox1 = document.getElementById("erreur-checkbox1");
 const messageValidation = document.getElementById("message-validation");
-
+const boutonSubmit = document.getElementById("submit");
 
 // validation requirement 
+form.addEventListener("submit", validate);
 
-function validate (){
+function validate (event){
+event.preventDefault();
 
   if (prenomValid() && nomValid() && mailValid() && dateValid() && quantityValid() && locationValid() && checkbox1Valid()){
+    LaunchMessage();
+    clearModal();
     return true;
   } else {
     return false;
@@ -153,9 +158,32 @@ function checkbox1Valid () {
     erreurCheckbox1.style.display = "block";
     return false;
   }
+
 }
 
 
+// Message de Validation
+
+function LaunchMessage (){
+let message = messageValidation.style.display = "block";
+modalbg.style.display = "none";  
+}
+
+function clearModal () {
+firstName.value = "";
+firstName.value = "";
+lastName.value = "";
+email.value = "";
+birthDate.value = "";
+quantity.value = "";
+locations[0].checked= false;
+locations[1].checked= false;
+locations[2].checked= false;
+locations[3].checked= false;
+locations[4].checked= false;
+locations[5].checked= false;
+checkbox2.checked = false;
+}
 /*
 function validate () {
 
