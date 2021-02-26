@@ -57,10 +57,10 @@
           <span class="close"></span>
           <div class="modal-body">
             <form
+              id="form"
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
             >
               <div
                 class="formData">
@@ -70,8 +70,11 @@
                   type="text"
                   id="first"
                   name="first"
-                  minlength="2"
+                  
                 /><br>
+              </div>
+              <div class="erreur"> 
+                <p id="erreur-prenom">Veuillez entrer 2 caractères ou plus dans le champs du prénom.</p>
               </div>
               <div
                 class="formData">
@@ -83,6 +86,9 @@
                   name="last"
                 /><br>
               </div>
+              <div class="erreur"> 
+                <p id="erreur-nom">Veuillez entrer 2 caractères ou plus dans le champs du nom.</p>
+              </div>
               <div
                 class="formData">
                 <label for="email">E-mail</label><br>
@@ -92,6 +98,9 @@
                   id="email"
                   name="email"
                 /><br>
+              </div>
+              <div class="erreur"> 
+                <p id="erreur-mail">Vous devez entrer une adresse E-mail valide.</p>
               </div>
               <div
                 class="formData">
@@ -103,10 +112,16 @@
                   name="birthdate"
                 /><br>
               </div>
+              <div class="erreur"> 
+                <p id="erreur-date">Vous devez entrer votre date de naissance.</p>
+              </div>
               <div
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+              </div>
+              <div class="erreur"> 
+                <p id="erreur-quantity">Vous devez entrer le nombres de tournois participé.</p>
               </div>
               <p class="text-label">Quelles villes ?</p>
               <div
@@ -178,6 +193,9 @@
                   Portland</label
                 >
               </div>
+              <div class="erreur"> 
+                <p id="erreur-location">Vous devez choisir une option.</p>
+              </div>
 
               <div
                 class="formData">
@@ -199,15 +217,26 @@
                 </label>
                 <br>
               </div>
+              <div class="erreur"> 
+                <p id="erreur-checkbox1">Vous devez vérifier que vous avez acceptez les termes et les conditions.</p>
+              </div>
               <input
                 class="btn-submit, button"
+                id="submit"
                 type="submit"
                 value="C'est parti"
               />
             </form>
+            
           </div>
+          
         </div>
       </div>
+      <div id="message-validation" class="bground-message">
+              <span id="closemessage" class="close"></span>
+              <h2>Merci!</h2>
+              <p>Votre réservation à été réalisée avec succèss.</p>
+            </div>
     </main>
     <footer>
       <p class="copyrights">
