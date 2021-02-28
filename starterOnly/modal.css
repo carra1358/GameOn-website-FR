@@ -35,11 +35,11 @@ img {
   margin: 3.5%;
 }
 .header-logo {
+    width: 22%;
     float: left;
 }
 .header-logo > img {
-  width: auto;
-  height: auto;
+  width: 100%;
 }
 .main-navbar {
     float: right;
@@ -52,7 +52,7 @@ img {
   padding: 12px 12px;
   margin: 5px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1em;
   font-family: Roboto, sans-serif;
 }
 
@@ -72,15 +72,29 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+#Xmenu{
+  position: absolute;
+  top: 6%;
+  right: 7%;
+  display: none;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 950px) {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
   }
+
+  .header-logo {
+    width: 30%;
+    float: left;
 }
 
-@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 950px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -97,13 +111,28 @@ img {
 
 
  @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
+
+  .header-logo {
+    width: 55%;
+}
+
+   .main-navbar {
+     width: 100%;
+   }
+  .topnav a {
+    display: none;}
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+    position: fixed;
+    top: 0;
+    right: 3.5%;
+  }
+  .fa-bars{
+    display: block;
   }
 } 
+
 
 main {
   font-size: 130%;
@@ -214,28 +243,11 @@ input {
   font-size: 20px;
   height: 48px;
 }
-.formData[data-error]::after {
-  content: attr(data-error);
-  font-size: 0.4em;
-  color: #e54858;
-  display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  text-align: right;
-  line-height: 0.3;
-  opacity: 0;
-  transition: 0.3s;
-}
-.formData[data-error-visible="true"]::after {
-  opacity: 1;
-}
-.formData[data-error-visible="true"] .text-control {
-  border: 2px solid #e54858;
-}
+
 /* style message d'erreur*/
 .erreur{
     font-size: 0.5em;
-    color: red;
+    color:#fe142f;
 } 
 
 [id^="erreur-"]{
@@ -246,11 +258,10 @@ input {
   display: none;
   position: absolute;
   z-index: 2;
-  top: 50%;
+  top: 25%;
   left: 25%;
   width: 50%;
-  height: 50%;
-  background: #232323;
+  background: #fe142f;
   border-radius: 10px;
   color: #fff;
   padding-top: 10px;
@@ -260,14 +271,14 @@ input {
 
 .bground-message > p {
 text-align: center;
-font-size: 1vw;
+font-size: 4vw;
 }
 
 .bground-message > h2 {
-margin-top: 25%;
+margin-top: 20%;
 margin-bottom: 1em ;
 text-align: center;
-font-size: 1vw;
+font-size: 6vw;
 }
 
 
@@ -527,6 +538,8 @@ footer {
     background: #fff;
     color: #000;
     padding: 20px;
+    min-width: unset;
+    text-align: center;
   }
   .hero-content::after {
     content: unset;
@@ -535,7 +548,7 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     white-space: normal;
   }
   .hero-text {

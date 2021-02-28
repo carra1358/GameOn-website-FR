@@ -1,11 +1,41 @@
+let faTimes = document.getElementById("Xmenu");
+let x = document.getElementById("myTopnav");
+let logo = document.querySelector(".header-logo");
+let faBars = document.querySelector(".fa-bars");
+let widths = [0,540];
+
+
+
 function editNav() {
-  var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
   } else {
     x.className = "topnav";
   }
 }
+faBars.addEventListener("click",editNavMobil);
+
+function editNavMobil(){
+
+  if(window.innerWidth>= widths[0]&& window.innerWidth<widths[1] ){
+    faBars.style.display= "none";
+    logo.style.display = "none";
+    faTimes.style.display = "block";
+    editNav();
+  }
+  else{
+    faTimes.style.display = "none";
+    editNav();
+  }
+
+}
+
+faTimes.addEventListener("click", closeMenu => {
+  faBars.style.display= "block";
+    logo.style.display = "block";
+    faTimes.style.display = "none";
+    x.className = "topnav";
+});
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
