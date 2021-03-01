@@ -1,3 +1,4 @@
+//DOM menu
 let faTimes = document.getElementById("Xmenu");
 let x = document.getElementById("myTopnav");
 let logo = document.querySelector(".header-logo");
@@ -5,7 +6,7 @@ let faBars = document.querySelector(".fa-bars");
 let widths = [0,540];
 
 
-
+// Menu 
 function editNav() {
   if (x.className === "topnav") {
     x.className += " responsive";
@@ -13,6 +14,8 @@ function editNav() {
     x.className = "topnav";
   }
 }
+
+// Menu responsive
 faBars.addEventListener("click",editNavMobil);
 
 function editNavMobil(){
@@ -214,61 +217,3 @@ locations[4].checked= false;
 locations[5].checked= false;
 checkbox2.checked = false;
 }
-/*
-function validate () {
-
-let formData = new FormData(form);
- 
- if (firstName.value.trim() == "" || firstName.value.trim().length < 2){
-  console.log(erreurPrenom.style.display = "block");
-  return false;
- }
- 
-
-  if (lastName.value.trim() == "" || lastName.value.trim().length < 2){
-    console.log(erreurNom.style.display = "block");
-    return false;
-  }
-
-  if (email.value.trim() == "") {
-    console.log(erreurMail.style.display = "block");
-    return false;
-  }
-  if (emailRegx.test(email.value)){
-    console.log(erreurMail.style.display = "block");
-    return false;
-  }
-
-  if (birthRegx.test(birthDate.value)){
-    console.log(erreurDate.style.display = "block");
-    return false;
-  }
-
-  if (quantity.value.trim() == "" ){
-    console.log(erreurQuantity.style.display = "block");
-    return false;
-  }
-
-
-  if (!quantityRegx.test(quantity.value)){
-    console.log(erreurQuantity.style.display = "block");
-    return false;
-  }
-  
-  for (let i =0; i < locations.length ; i++){
-    if (locations[i].checked)
-       locationChecked++
-  }
-
-  if (locationChecked < 1){
-    console.log(erreurLocation.style.display = "block");
-    return false;
-  }
-
-  if (!checkbox1.checked){
-    console.log(erreurCheckbox1.style.display = "block");
-    return false;
-  }
-
-}
-*/
