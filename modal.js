@@ -5,6 +5,9 @@ let logo = document.querySelector(".header-logo");
 let faBars = document.querySelector(".fa-bars");
 let widths = [0,540];
 
+/** 
+ * permet d'ajouter un style au menu de navigation
+*/
 
 // Menu 
 function editNav() {
@@ -18,20 +21,29 @@ function editNav() {
 // Menu responsive
 faBars.addEventListener("click",editNavMobil);
 
+/** 
+ * permet de détecter la taille de l'écran et d'afficher le menu correspondant.
+*/
+
 function editNavMobil(){
 
   if(window.innerWidth>= widths[0]&& window.innerWidth<widths[1] ){
     faBars.style.display= "none";
     logo.style.display = "none";
     faTimes.style.display = "block";
-    editNav();
+    
   }
   else{
     faTimes.style.display = "none";
-    editNav();
+   
   }
-
+  editNav();
 }
+
+/** 
+ * Event avec fonction de retour au menu fermer.
+ *
+*/
 
 faTimes.addEventListener("click", closeMenu => {
   faBars.style.display= "block";
@@ -79,7 +91,7 @@ const checkbox2 = document.getElementById("checkbox2");
 let locationChecked = 0;
 const emailRegx = new RegExp ("[a-zA-Z0-9.-]+@[a-zA-Z0-9-]+.[a-z]+");
 const birthRegx = new RegExp ("[0-9-]{5}[0-9-]{3}[0-9-]{2}");
-const quantityRegx = new RegExp("[0-9]+");
+const quantityRegx = new RegExp("^[0-9]{1,2}$");
 
 //DOM message erreur et message validation
 
@@ -96,6 +108,13 @@ const boutonSubmit = document.getElementById("submit");
 // validation requirement 
 form.addEventListener("submit", validate);
 
+/** 
+ * permet de valider le formulaire, envoie confirmation et réinisialise le formulaire.
+ * 
+ * @param event evenement à la soumisssion du formulaire
+ * 
+ * @return {Boolean} formulaire valide ou non.
+*/
 function validate (event){
 event.preventDefault();
 
@@ -108,6 +127,13 @@ event.preventDefault();
   }
   
 }
+
+/** 
+ * permet de valider chaque champs du formulaire.
+ * 
+ * 
+ * @return {Boolean} valide le champs ou envoie erreur.
+*/
 
 function prenomValid () {
     if (!firstName.value.trim() == ""){
@@ -197,10 +223,18 @@ function checkbox1Valid () {
 
 // Message de Validation
 
+/** 
+ * Affiche le message de validation et ferme le formulaire.
+*/
+
 function LaunchMessage (){
 let message = messageValidation.style.display = "block";
 modalbg.style.display = "none";  
 }
+
+/** 
+ * permet d'effacer toutes les entrées du formulaires.
+*/
 
 function clearModal () {
 firstName.value = "";

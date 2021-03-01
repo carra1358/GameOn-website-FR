@@ -164,6 +164,7 @@ main {
   background: #3876ac;
 }
 
+
 .footer {
   margin: 20px;
   padding: 10px;
@@ -258,30 +259,47 @@ input {
   display: none;
   position: absolute;
   z-index: 2;
-  top: 25%;
-  left: 25%;
-  width: 50%;
-  background: #fe142f;
+  top: 15%;
+  left: 0%;
+  right: 0%;
+  width: 40%;
+  background:#232323;
+  box-shadow: 3px 3px 20px #000000;
   border-radius: 10px;
   color: #fff;
   padding-top: 10px;
   padding: 15px 8%;
-  margin: 15px auto;
+  margin: auto;
 }
 
+
+
 .bground-message > p {
+margin-bottom: 15%;
 text-align: center;
-font-size: 4vw;
 }
 
 .bground-message > h2 {
-margin-top: 20%;
+margin-top: 15%;
 margin-bottom: 1em ;
 text-align: center;
-font-size: 6vw;
 }
 
+@media screen and (max-width:540px){
 
+  .bground-message{
+    width: 82%;
+  }
+  
+  .bground-message >h2 {
+    font-size: 145%;
+  }
+  
+  .bground-message >p {
+    font-size: 85%;
+  }
+  
+}
 
 .checkbox-label,
 .checkbox2-label {
