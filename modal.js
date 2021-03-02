@@ -41,7 +41,7 @@ function editNavMobil(){
 }
 
 /** 
- * Event avec fonction de retour au menu fermer.
+ * Eventlistener au click avec fonction de retour au menu fermer.
  *
 */
 
@@ -136,28 +136,29 @@ event.preventDefault();
 */
 
 function prenomValid () {
-    if (!firstName.value.trim() == ""){
-      erreurPrenom.style.display = "none"
-      return true;
-    } else if (firstName.value.trim().length >=2) {
-      erreurPrenom.style.display = "none"
-      return true;
-    } else {
-      erreurPrenom.style.display = "block"
+    if (firstName.value.trim() == ""){
+      erreurPrenom.style.display = "block";
       return false;
+    } else if (firstName.value.trim().length < 2) {
+      erreurPrenom.style.display = "block";
+      return false;
+    } else {
+      erreurPrenom.style.display = "none";
+      return true;
     }
 }
 
 function nomValid () {
-  if (!lastName.value.trim() == ""){
-    erreurNom.style.display = "none";
-    return true;
-  } else if (lastName.value.trim().length >= 2) {
-    erreurNom.style.display = "none";
-    return true;
-  } else {
+  if (lastName.value.trim() == ""){
     erreurNom.style.display = "block";
     return false;
+  } else if (lastName.value.trim().length < 2) {
+    erreurNom.style.display = "block";
+    return false;
+  } 
+  else {
+    erreurNom.style.display = "none";
+    return true;
   }
 }
 
